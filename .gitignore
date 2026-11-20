@@ -1,0 +1,31 @@
+﻿# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# PHP dependencies
+/vendor/
+
+# Logs
+*.log
+
+# IDE settings
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.bak
+
+# Test and coverage output
+.phpunit.cache/
+coverage/
+
+# Local database exports and backups
+*.sql.backup
+*.dump
