@@ -21,3 +21,22 @@ Project initialization and requirements planning.
 - Finalize the application requirements.
 - Design the database entities and relationships.
 - Plan the frontend and backend implementation.
+
+## 2026-11-20 - Database Design
+
+### Completed
+- Identified the initial database entities.
+- Separated user accounts from member profiles.
+- Separated general book information from physical copies.
+- Designed the many-to-many relationship between books and authors.
+- Documented database relationships and integrity rules.
+- Prepared the initial ER diagram.
+
+### Current Status
+Initial logical database design prepared for review.
+
+### Next Tasks
+- Review and finalize database relationships.
+- Implement the SQL schema.
+- Create the database in the local MariaDB server.
+- Verify tables, keys, indexes, and constraints.
