@@ -1,4 +1,4 @@
-﻿# Database Design
+# Database Design
 
 ## 1. Overview
 
@@ -92,7 +92,8 @@ Main fields:
 - copy_id: Primary key.
 - book_id: Foreign key referencing books.
 - accession_number: Unique library copy identifier.
-- copy_status: Available, borrowed, lost, or damaged.
+- copy_status: Available, lost, or damaged.
+- Borrowed status is derived from active borrowing records.
 - created_at: Record creation timestamp.
 
 One book can have multiple physical copies.
@@ -124,8 +125,9 @@ return_date rather than stored as a separate status.
 - One author can be associated with multiple books.
 - One book can have multiple physical copies.
 - One member can have multiple borrowing records.
-- One physical copy can have multiple borrowing records
-  over time, but only one active borrowing at a time.
+- A physical copy can have multiple borrowing records over time.
+- Only one active borrowing is allowed per physical copy at a time.
+- Borrowed availability is determined from active borrowing records.
 - A librarian or administrator can issue and receive books.
 
 ## 4. Database Integrity Rules
@@ -163,5 +165,32 @@ may be considered in later development stages.
 
 ## 7. Design Status
 
-Initial logical database design. Physical SQL implementation
-will follow after reviewing this design.
+Initial database schema implemented and verified successfully.
+
+## Implementation clarification - 2026-11-20
+
+The following details describe the implemented database structure and
+supersede any earlier conflicting descriptions in this document.
+
+### Physical Book Copy Status
+
+The `book_copies.copy_status` column supports these values:
+
+- `available`
+- `lost`
+- `damaged`
+
+Borrowed status is derived from active borrowing records. It is not stored
+as a separate value in `copy_status`.
+
+### Active Borrowing Protection
+
+The `borrowings.active_copy_id` column stores the physical copy ID while
+a borrowing is active. It must be set to `NULL` when the book is returned.
+
+A unique constraint on `active_copy_id` prevents multiple active borrowing
+records from using the same physical book copy.
+
+The PHP borrowing and return operations must update this column correctly
+within database transactions. Application-level validation must also check
+borrowing dates and return information before database changes are committed.

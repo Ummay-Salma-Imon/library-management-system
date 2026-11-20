@@ -1,4 +1,4 @@
-﻿# Development Log
+# Development Log
 
 ## 2026-11-20 - Project Initialization
 
@@ -40,3 +40,25 @@ Initial logical database design prepared for review.
 - Implement the SQL schema.
 - Create the database in the local MariaDB server.
 - Verify tables, keys, indexes, and constraints.
+
+## 2026-11-20 - Initial Database Implementation
+
+### Completed
+- Created the initial MariaDB database schema.
+- Created eight relational database tables.
+- Added primary keys and foreign keys.
+- Added unique constraints and indexes.
+- Established relationships between the database entities.
+- Added a unique constraint to prevent multiple active borrowings
+  of the same physical book copy.
+- Verified that all eight tables use the InnoDB storage engine.
+- Verified the foreign-key relationships through phpMyAdmin.
+
+### Current Status
+Initial database schema implemented and verified successfully.
+
+### Next Tasks
+- Review the database structure.
+- Insert controlled sample records.
+- Test relationships and database constraints.
+- Configure the PHP database connection.
