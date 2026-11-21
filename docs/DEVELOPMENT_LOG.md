@@ -103,3 +103,24 @@ Verification:
 - All eight expected tables were detected.
 
 Result: PHP database connection test passed.
+
+## November 21, 2026 - Database Health Check API
+
+Implemented the initial database health-check endpoint.
+
+Work completed:
+- Added `backend/api/health.php`.
+- Implemented a database connectivity check using the reusable PDO connection.
+- Added JSON responses and appropriate HTTP status codes.
+- Added generic error responses to avoid exposing database details publicly.
+- Added server-side error logging.
+- Documented the endpoint in `docs/HEALTH_CHECK_API.md`.
+
+Verification:
+- PHP syntax check passed.
+- Valid database connection returned HTTP 200.
+- Invalid database name returned HTTP 503.
+- Both JSON response bodies matched expectations.
+- Internal database errors were not exposed in the API response.
+
+Result: Both health-check tests passed.
