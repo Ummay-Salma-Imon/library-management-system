@@ -84,3 +84,22 @@ passed successfully.
 - Implement the PHP database connection layer.
 - Test PHP connectivity with MariaDB.
 - Build and verify the first database health-check API.
+## November 21, 2026 - PHP PDO Database Connection
+
+Implemented the initial PHP database connection layer.
+
+Work completed:
+- Added environment-based configuration in `backend/config/database.php`.
+- Added reusable PDO connection logic in `backend/config/connection.php`.
+- Configured utf8mb4, exception handling, associative fetch mode, and native prepared statements.
+- Added `tests/test_database_connection.php`.
+- Added `docs/PHP_DATABASE_CONNECTION.md`.
+
+Verification:
+- All three PHP files passed syntax checks.
+- PDO successfully connected to the local MariaDB server.
+- Database selected: `library_management_system`.
+- MariaDB version: 10.11.16.
+- All eight expected tables were detected.
+
+Result: PHP database connection test passed.
