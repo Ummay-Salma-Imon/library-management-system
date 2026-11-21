@@ -62,3 +62,25 @@ Initial database schema implemented and verified successfully.
 - Insert controlled sample records.
 - Test relationships and database constraints.
 - Configure the PHP database connection.
+
+## 2026-11-21 - Sample Data and Database Testing
+
+### Completed
+- Created a repeatable SQL sample data script.
+- Added demonstration users and member profiles.
+- Added book categories, authors, books, and physical copies.
+- Added one returned and one active borrowing record.
+- Verified sample data insertion and repeated execution.
+- Confirmed duplicate active borrowing prevention.
+- Confirmed foreign-key enforcement for nonexistent book copies.
+- Verified all expected demonstration record counts.
+- Created the database testing report.
+
+### Current Status
+Sample data insertion and the tested database integrity rules
+passed successfully.
+
+### Next Tasks
+- Implement the PHP database connection layer.
+- Test PHP connectivity with MariaDB.
+- Build and verify the first database health-check API.
